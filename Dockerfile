@@ -5,13 +5,13 @@ RUN apt-get update && \
     apt-get clean && \
     /usr/sbin/rndc-confgen -a
 
-COPY dhcpd.conf /etc/dhcp/ \
-     named.conf.local /etc/bind/ \
-     named.conf.options /etc/bind/ \
-     home.local.zone /var/lib/bind/ \
-     home.local.rev.zone /var/lib/bind/ \
-     rootupd.cron /tmp/ \
-     ukntp.conf /etc/ntp.conf
+COPY dhcpd.conf /etc/dhcp/ 
+COPY named.conf.local /etc/bind/ 
+COPY named.conf.options /etc/bind/ 
+COPY home.local.zone /var/lib/bind/ 
+COPY home.local.rev.zone /var/lib/bind/ 
+COPY rootupd.cron /tmp/ 
+COPY ukntp.conf /etc/ntp.conf
 
 RUN chown root:bind /etc/bind/rndc.key && \
     chmod 640 /etc/bind/rndc.key && \
