@@ -5,9 +5,9 @@ RUN apt-get update && \
     apt-get clean && \
     /usr/sbin/rndc-confgen -a
 
-COPY g6nddns.key /etc/bind/ \
-     dhcpd.conf /etc/dhcp/ \
+COPY dhcpd.conf /etc/dhcp/ \
      named.conf.local /etc/bind/ \
+     named.conf.options /etc/bind/ \
      home.local.zone /var/lib/bind/ \
      home.local.rev.zone /var/lib/bind/ \
      rootupd.cron /tmp/ \
