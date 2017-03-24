@@ -18,4 +18,4 @@ RUN chown root:bind /etc/bind/rndc.key && \
     chown root:root /var/lib/bind/*.zone && \
     chmod 644  /var/lib/bind/*.zone
     
-CMD crontab /tmp/rootupd.cron && tail -f /var/lib/dhcp/dhcpd.leases
+CMD touch /var/lib/dhcp/dhcpd.leases && crontab /tmp/rootupd.cron && tail -f /var/lib/dhcp/dhcpd.leases
