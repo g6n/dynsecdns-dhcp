@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER: G6NUK (g6n@pnpenterprises.co.uk)
+MAINTAINER G6NUK (g6n@pnpenterprises.co.uk)
 RUN apt-get update && \
     apt-get install -y isc-dhcp-server bind9 cron ntp ntpdate vim &&\
     apt-get clean && \
