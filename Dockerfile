@@ -16,6 +16,6 @@ COPY ukntp.conf /etc/ntp.conf
 RUN chown root:bind /etc/bind/rndc.key && \
     chmod 640 /etc/bind/rndc.key && \
     chown root:root /var/lib/bind/*.zone && \
-    chmod 644  /var/lib/bind/*.zone && \
+    chmod 644  /var/lib/bind/*.zone
     
 CMD crontab /tmp/rootupd.cron && tail -f /var/lib/dhcp/dhcpd.leases
