@@ -1,0 +1,14 @@
+$ORIGIN .
+$TTL 1000000    
+home.local      IN SOA    ns1.home.local. admin.home.local. (
+                          2017032401 ; serial
+                          28800      ; refresh (8 hours)
+                          3600       ; retry (1 hour)
+                          604800     ; expire (1 week)
+                          38400      ; minimum (10 hours 40 minutes)
+                          )
+                NS    ns1.home.local.
+$ORIGIN home.local.
+router          A       172.16.1.1
+ns1             A       172.16.1.7
+dns-server      CNAME   ns1   ; the name of the server we are building

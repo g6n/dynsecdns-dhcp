@@ -1,0 +1,15 @@
+$ORIGIN .
+$TTL 1000000 
+1.16.172.in-addr.arpa IN SOA    ns1.home.local. admin.home.local. (
+                2017032402 ; serial
+                28800      ; refresh (8 hours)
+                604800     ; retry (1 week)
+                604800     ; expire (1 week)
+                86400      ; minimum (1 day)
+                )
+           NS     ns1.home.local.
+$ORIGIN 1.16.172.in-addr.arpa.
+1          PTR    router.home.local.
+7          PTR    dns-server.home.local.
+           PTR    home.local.
+

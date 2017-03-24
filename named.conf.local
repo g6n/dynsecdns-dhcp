@@ -1,0 +1,22 @@
+//
+// Do any local configuration here
+//
+include "/etc/bind/rndc.key";
+ 
+zone "home.local" {
+     type master;
+     file "/var/lib/bind/home.local.zone";
+     allow-update { key rndc-key; };
+};
+ 
+# This is the zone definition for reverse DNS. replace 1.16.172 with your network
+# address in reverse notation - e.g my network address is 172.16.1
+zone "1.16.172.in-addr.arpa" {
+     type master;
+     file "/var/lib/bind/home.local.rev.zone";
+     allow-update { key rndc-key; };
+};
+ 
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
